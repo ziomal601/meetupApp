@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="sea">sea</string>
+    <string name="squuze_feezy">Squuze Feezy</string>
+    <string name="test">Test</string>
+    <string name="testowy">Testowy</string>
+    <string name="simple_view_go_next">simple View go next</string>
 </resources>

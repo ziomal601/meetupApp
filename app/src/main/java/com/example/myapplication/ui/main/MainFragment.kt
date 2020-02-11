@@ -1,12 +1,16 @@
 package com.example.myapplication.ui.main
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
+import com.example.myapplication.models.SimpleModel
+import com.example.myapplication.recyclerview.RecyclerViewAdapter
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -27,6 +31,27 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = RecyclerViewAdapter(
+                listOf(
+                    SimpleModel("Test", "Testowy"),
+                    SimpleModel("Fake", "Data"),
+                    SimpleModel("Test", "Testowy"),
+                    SimpleModel("Fake", "Data"),
+                    SimpleModel("Test", "Testowy"),
+                    SimpleModel("Fake", "Data"),
+                    SimpleModel("Test", "Testowy"),
+                    SimpleModel("Fake", "Data")
+                )
+            )
+        }
     }
 
 }
